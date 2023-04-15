@@ -1,5 +1,6 @@
 const express = require("express");
 const http = require("http");
+const os = require("os");
 const mongodb = require("mongodb");
 
 const app = express();
@@ -77,7 +78,8 @@ async function main() {
     // Starts the HTTP server.
     //
     app.listen(PORT, () => {
-        console.log(`Microservice listening, please load the data file db-fixture/videos.json into your database before testing this microservice.`);
+        console.log(`Video streaming service online on ${os.hostname()} port ${PORT} [${os.platform()}]`);
+        console.log(`Video streaming: please load the data file db-fixture/videos.json into your database before testing this microservice.`);
     });
 }
 

@@ -1,5 +1,6 @@
 const express = require("express");
 const http = require("http");
+const os = require("os");
 
 const app = express();
 
@@ -52,5 +53,5 @@ app.get("/video", (req, res) => {
 // Starts the HTTP server.
 //
 app.listen(PORT, () => {
-    console.log(`Microservice online`);
+    console.log(`Video streaming service online on ${os.hostname()} port ${PORT} [${os.platform()}]`);
 });

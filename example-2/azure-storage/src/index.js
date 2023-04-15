@@ -1,4 +1,5 @@
 const express = require("express");
+const os = require("os");
 const { BlobServiceClient, StorageSharedKeyCredential } = require("@azure/storage-blob");
 
 const app = express();
@@ -73,5 +74,5 @@ app.get("/video", async (req, res) => {
 // Starts the HTTP server.
 //
 app.listen(PORT, () => {
-    console.log(`Microservice online`);
+    console.log(`Azure storage service online on ${os.hostname()} port ${PORT} [${os.platform()}]`);
 });
